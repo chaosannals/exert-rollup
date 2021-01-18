@@ -1,0 +1,31 @@
+{
+  "name": "exru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaosannals/exert-rollup.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "rollup"
+  ],
+  "author": {
+    "name": "chaosannals",
+    "email": "chaosannals@outlook.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chaosannals/exert-rollup/issues"
+  },
+  "homepage": "https://github.com/chaosannals/exert-rollup#readme",
+  "devDependencies": {
+    "rollup": "^2.36.2"
+  }
+}
