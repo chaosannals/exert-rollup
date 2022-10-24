@@ -1,0 +1,16 @@
+{
+  "name": "tsdemo",
+  "version": "1.0.0",
+  "description": "yet a rollup typescript demo.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin typescript"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^9.0.2",
+    "rollup": "^3.2.3",
+    "tslib": "^2.4.0"
+  }
+}
