@@ -1,8 +1,18 @@
-import typescript from '@rollup/plugin-typescript'
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs'
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export default [{
     input: "main/browser.ts",
-    plugins: [typescript()],
+    plugins: [
+      nodeResolve({
+        browser: true,
+      }),
+      commonjs({
+        include: /node_modules/
+      }),
+      typescript(),
+    ],
     output: {
       dir: "dist",
       name: "exert",
@@ -12,7 +22,15 @@ export default [{
     external: ['vue'],
   }, {
     input: "main/vue2.ts",
-    plugins: [typescript()],
+    plugins: [
+      nodeResolve({
+        browser: true,
+      }),
+      commonjs({
+        include: /node_modules/
+      }),
+      typescript(),
+    ],
     output: {
       dir: "dist",
       name: "exert",
@@ -22,7 +40,15 @@ export default [{
     external: ['vue'],
   }, {
     input: "main/vue3.ts",
-    plugins: [typescript()],
+    plugins: [
+      nodeResolve({
+        browser: true,
+      }),
+      commonjs({
+        include: /node_modules/
+      }),
+      typescript(),
+    ],
     output: {
       dir: "dist",
       name: "exert",
