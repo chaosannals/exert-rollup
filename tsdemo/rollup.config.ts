@@ -31,6 +31,7 @@ export default [{
     name: "exert",
     format: "iife",
     sourcemap: true,
+    intro: 'const global = window;',
   },
   external: ['vue'],
 }, {
@@ -60,6 +61,7 @@ export default [{
     name: "exert",
     format: "umd",
     sourcemap: true,
+    intro: 'const global = window;',
   },
   external: ['vue'],
 }, {
@@ -89,6 +91,7 @@ export default [{
     name: "exert",
     format: "umd",
     sourcemap: true,
+    intro: 'const global = window;',
   },
   external: ['vue'],
 }];
