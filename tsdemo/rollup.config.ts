@@ -1,5 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
-import commonjs from '@rollup/plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs';
+import { babel } from '@rollup/plugin-babel';
+import terser from '@rollup/plugin-terser';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 // import nodePolyfills from 'rollup-plugin-polyfill-node';
 import builtins from 'rollup-plugin-node-builtins';
@@ -7,15 +9,18 @@ import builtins from 'rollup-plugin-node-builtins';
 export default [{
   input: "main/browser.ts",
   plugins: [
+    babel({ babelHelpers: 'bundled' }),
     builtins(),
     // nodePolyfills(),
     nodeResolve({
       browser: true,
+      preferBuiltins: false,
     }),
     commonjs({
       include: /node_modules/
     }),
     typescript(),
+    // terser(),
   ],
   onwarn: function (warning) {
     if (warning.code === 'THIS_IS_UNDEFINED') {
@@ -37,15 +42,18 @@ export default [{
 }, {
   input: "main/vue2.ts",
   plugins: [
+    babel({ babelHelpers: 'bundled' }),
     builtins(),
     // nodePolyfills(),
     nodeResolve({
       browser: true,
+      preferBuiltins: false,
     }),
     commonjs({
       include: /node_modules/
     }),
     typescript(),
+    // terser(),
   ],
   onwarn: function (warning) {
     if (warning.code === 'THIS_IS_UNDEFINED') {
@@ -67,15 +75,18 @@ export default [{
 }, {
   input: "main/vue3.ts",
   plugins: [
+    babel({ babelHelpers: 'bundled' }),
     builtins(),
     // nodePolyfills(),
     nodeResolve({
       browser: true,
+      preferBuiltins: false,
     }),
     commonjs({
       include: /node_modules/
     }),
     typescript(),
+    // terser(),
   ],
   onwarn: function (warning) {
     if (warning.code === 'THIS_IS_UNDEFINED') {
